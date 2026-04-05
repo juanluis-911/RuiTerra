@@ -39,7 +39,7 @@ export default function Footer() {
                 <rect x="3" y="5" width="14" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M3 7l7 5 7-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </SocialLink>
-              <SocialLink href="#" label="LinkedIn">
+              <SocialLink href="https://www.linkedin.com/in/juanluis911/" label="LinkedIn">
                 <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M7 10v4M7 7v.5M10 14v-3a1 1 0 012 0v3M10 11a1 1 0 011-1h0a1 1 0 011 1" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
               </SocialLink>
