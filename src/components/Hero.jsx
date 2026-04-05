@@ -46,55 +46,60 @@ function CheckIcon() {
 
 function ProjectsGrid() {
   const projects = [
-    { name: 'PulsoAzul', tag: 'Salud & Educación', color: 'bg-primary', icon: <HeartIcon /> },
-    { name: 'NoseComer', tag: 'Lifestyle', color: 'bg-secondary', icon: <ForkIcon /> },
-    { name: 'TuriEats', tag: 'Delivery', color: 'bg-primary', icon: <MapIcon /> },
-    { name: 'Consultorio', tag: 'Gestión médica', color: 'bg-secondary', icon: <ClipboardIcon /> },
+    {
+      name: 'PulsoAzul',
+      tag: 'Salud & Educación',
+      color: 'bg-primary',
+      logo: '/logoapps/pulsoAzulLogo.png',
+      url: 'https://pulsoazul.com',
+    },
+    {
+      name: 'NoseComer',
+      tag: 'Lifestyle',
+      color: 'bg-secondary',
+      logo: '/logoapps/nosequecomer.png',
+      url: 'https://no-se-que-comer.vercel.app/',
+    },
+    {
+      name: 'TuriEats',
+      tag: 'Delivery',
+      color: 'bg-primary',
+      logo: '/logoapps/turieats.png',
+      url: 'https://turieats.vercel.app/',
+    },
+    {
+      name: 'Consultorio',
+      tag: 'Gestión médica',
+      color: 'bg-secondary',
+      logo: null,
+      url: 'https://clinica-plus-rho.vercel.app/',
+      icon: <ClipboardIcon />,
+    },
   ]
 
   return (
     <div className="w-full max-w-sm grid grid-cols-2 gap-3">
       {projects.map((p) => (
-        <div
+        <a
           key={p.name}
-          className={`${p.color} rounded-xl p-5 flex flex-col gap-3 hover:opacity-90 transition-opacity duration-200`}
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${p.color} rounded-xl p-5 flex flex-col gap-3 hover:opacity-85 transition-opacity duration-200 no-underline`}
         >
-          <div className="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">
-            {p.icon}
+          <div className="h-9 flex items-center">
+            {p.logo
+              ? <img src={p.logo} alt={p.name} className="h-9 w-auto object-contain" />
+              : <div className="w-9 h-9 bg-white/15 rounded-lg flex items-center justify-center">{p.icon}</div>
+            }
           </div>
           <div>
             <p className="text-white font-bold text-sm">{p.name}</p>
             <p className="text-white/60 text-xs mt-0.5">{p.tag}</p>
           </div>
-        </div>
+        </a>
       ))}
     </div>
-  )
-}
-
-function HeartIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M9 15s-6-4.35-6-8.5A3.5 3.5 0 019 4.5 3.5 3.5 0 0115 6.5C15 10.65 9 15 9 15z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function ForkIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M9 9V15M6 3v2a3 3 0 006 0V3M6 3v2M12 3v2" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="9" cy="9" r="1.5" fill="white" />
-    </svg>
-  )
-}
-
-function MapIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path d="M9 2a5 5 0 00-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 00-5-5z" stroke="white" strokeWidth="1.5" />
-      <circle cx="9" cy="7" r="1.5" fill="white" />
-    </svg>
   )
 }
 

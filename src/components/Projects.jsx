@@ -1,6 +1,7 @@
 const projects = [
   {
     name: 'PulsoAzul',
+    logo: '/logoapps/pulsoAzulLogo.png',
     tag: 'Salud & Educación especial',
     tagColor: 'bg-blue-50 text-blue-700',
     headline: 'La red de apoyo para niños neurodivergentes',
@@ -13,10 +14,12 @@ const projects = [
       'Agenda de citas y recordatorios automáticos',
       'Reportes de progreso exportables',
     ],
+    url: 'https://pulsoazul.com',
     mockup: <PulsoMockup />,
   },
   {
     name: 'NoseComer',
+    logo: '/logoapps/nosequecomer.png',
     tag: 'Lifestyle & Food',
     tagColor: 'bg-orange-50 text-orange-700',
     headline: 'Decide qué cocinar hoy, sin pensar',
@@ -29,10 +32,12 @@ const projects = [
       'Guardado de recetas favoritas',
       'Modo "sorpréndeme" aleatorio',
     ],
+    url: 'https://no-se-que-comer.vercel.app/',
     mockup: <NoseComerMockup />,
   },
   {
     name: 'TuriEats',
+    logo: '/logoapps/turieats.png',
     tag: 'Delivery & Restaurantes',
     tagColor: 'bg-green-50 text-green-700',
     headline: 'Plataforma de delivery para restaurantes locales',
@@ -45,10 +50,12 @@ const projects = [
       'Tracking del pedido en tiempo real',
       'Sistema de pagos integrado',
     ],
+    url: 'https://turieats.vercel.app/',
     mockup: <TuriEatsMockup />,
   },
   {
     name: 'Consultorio Médico',
+    logo: null,
     tag: 'Gestión de salud',
     tagColor: 'bg-teal-50 text-teal-700',
     headline: 'Sistema integral para consultorios y clínicas',
@@ -61,6 +68,7 @@ const projects = [
       'POS de farmacia con control de inventario',
       'Historial de consultas y seguimiento de pacientes',
     ],
+    url: 'https://clinica-plus-rho.vercel.app/',
     mockup: <ConsultorioMockup />,
   },
 ]
@@ -90,10 +98,23 @@ export default function Projects() {
                 <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${project.tagColor}`}>
                   {project.tag}
                 </span>
-                <h3 className="mt-3 text-2xl md:text-3xl font-extrabold text-primary leading-tight">
-                  {project.name}
-                </h3>
-                <p className="mt-1 text-secondary font-semibold text-sm">{project.headline}</p>
+
+                <div className="mt-3 flex items-center gap-4">
+                  {project.logo && (
+                    <img
+                      src={project.logo}
+                      alt={`${project.name} logo`}
+                      className="h-10 w-auto object-contain"
+                    />
+                  )}
+                  {!project.logo && (
+                    <h3 className="text-2xl md:text-3xl font-extrabold text-primary leading-tight">
+                      {project.name}
+                    </h3>
+                  )}
+                </div>
+
+                <p className="mt-2 text-secondary font-semibold text-sm">{project.headline}</p>
                 <p className="mt-3 text-text-light leading-relaxed">{project.description}</p>
                 <ul className="mt-5 space-y-2">
                   {project.features.map((f) => (
@@ -106,6 +127,20 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
+
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 btn-outline text-sm"
+                  >
+                    Ver proyecto
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                )}
               </div>
 
               {/* Mockup */}
