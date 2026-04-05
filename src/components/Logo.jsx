@@ -6,9 +6,6 @@ export default function Logo({ white = false }) {
         alt="RuiTerra logo"
         className="h-14 w-auto object-contain"
       />
-      <span className={`text-xl font-bold tracking-tight ${white ? 'text-white' : 'text-primary'}`}>
-        Rui<span className={white ? 'text-green-400' : 'text-secondary'}>Terra</span>
-      </span>
     </a>
   )
 }
