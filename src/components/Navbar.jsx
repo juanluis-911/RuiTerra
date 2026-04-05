@@ -2,9 +2,8 @@ import { useState } from 'react'
 import Logo from './Logo'
 
 const links = [
-  { label: 'Funcionalidades', href: '#features' },
-  { label: 'Precios', href: '#pricing' },
-  { label: 'Demo', href: '#demo' },
+  { label: 'Proyectos', href: '#projects' },
+  { label: 'Servicios', href: '#services' },
   { label: 'Contacto', href: '#contact' },
 ]
 
@@ -31,7 +30,7 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <a href="#contact" className="btn-primary text-sm">
-            Comenzar gratis
+            Hablemos
           </a>
         </div>
 
@@ -61,7 +60,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="#contact" className="btn-primary text-sm text-center">
-            Comenzar gratis
+            Hablemos
           </a>
         </div>
       )}
