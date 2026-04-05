@@ -4,7 +4,7 @@ export default function Logo({ white = false }) {
       <img
         src="/logo.png"
         alt="RuiTerra logo"
-        className="h-9 w-auto object-contain"
+        className="h-14 w-auto object-contain"
       />
       <span className={`text-xl font-bold tracking-tight ${white ? 'text-white' : 'text-primary'}`}>
         Rui<span className={white ? 'text-green-400' : 'text-secondary'}>Terra</span>
