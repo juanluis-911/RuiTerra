@@ -2,15 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Brand tokens (from root index.css) ─────────────────────── */
+:root {
+  --color-primary:        #0F2A44;
+  --color-secondary:      #1F7A4C;
+  --color-white:          #FFFFFF;
+  --color-bg:             #F5F7FA;
+  --color-text:           #111827;
+  --color-text-light:     #6B7280;
+  --color-border:         #E5E7EB;
+  --color-success:        #1F7A4C;
+  --color-hover-primary:  #133657;
+  --color-hover-secondary:#24915A;
+  --radius:               12px;
+  --transition:           all 0.25s ease;
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
 @layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    background-color: #F5F7FA;
-    color: #111827;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    color: var(--color-primary);
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-secondary);
   }
 }
 
+/* ── Component shortcuts ─────────────────────────────────────── */
 @layer components {
   .btn-primary {
     @apply bg-primary text-white font-semibold px-6 py-3 rounded-xl transition-colors duration-200 hover:bg-primary-hover inline-block cursor-pointer;
@@ -29,5 +66,29 @@
   }
   .section-label {
     @apply text-secondary font-semibold text-sm uppercase tracking-widest;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background-color: var(--color-secondary);
+    color: white;
+  }
+  .input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
   }
 }
