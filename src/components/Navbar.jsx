@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white border-b border-border sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between">
         <Logo />
 
         {/* Desktop nav */}
